@@ -19,6 +19,9 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: 選手名・府県パーサーテスト
+        run: python -m unittest discover -s scripts -p 'test_*.py'
+
       - name: CSV品質監査
         run: python scripts/audit_data.py
 
