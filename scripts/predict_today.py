@@ -114,10 +114,16 @@ df_all["gear"]         = pd.to_numeric(df_all["gear"], errors="coerce")
 df_all["banum"]        = pd.to_numeric(df_all["banum"], errors="coerce")
 df_all["agari"]        = pd.to_numeric(df_all["agari"], errors="coerce")
 df_all["age"]          = pd.to_numeric(df_all.get("age"), errors="coerce")
-df_all["is_win"]       = (df_all["rank_num"]==1).astype(float)
-df_all["is_winner"]    = (df_all["rank_num"]==1).astype(int)
-df_all["is_2nd"]       = (df_all["rank_num"]==2).astype(int)
-df_all["is_3rd"]       = (df_all["rank_num"]==3).astype(int)
+# A blank rank means the result has not been captured; it is not a loss.
+df_all["result_present"] = (
+    df_all["rank"].notna()
+    & df_all["rank"].astype(str).str.strip().ne("")
+    & df_all["rank"].astype(str).str.lower().ne("nan")
+)
+df_all["is_win"]       = np.where(df_all["result_present"], (df_all["rank_num"]==1).astype(float), np.nan)
+df_all["is_winner"]    = np.where(df_all["result_present"], (df_all["rank_num"]==1).astype(int), np.nan)
+df_all["is_2nd"]       = np.where(df_all["result_present"], (df_all["rank_num"]==2).astype(int), np.nan)
+df_all["is_3rd"]       = np.where(df_all["result_present"], (df_all["rank_num"]==3).astype(int), np.nan)
 df_all["mark_num"]     = pd.to_numeric(df_all.get("mark_num"),     errors="coerce")
 df_all["win_rate_4m"]  = pd.to_numeric(df_all.get("win_rate_4m"),  errors="coerce")
 df_all["top2_rate_4m"] = pd.to_numeric(df_all.get("top2_rate_4m"), errors="coerce")
@@ -148,8 +154,8 @@ df_all_s = df_all.sort_values(["player_key","date","race_no"])
 df_all["venue_win_rate"]  = df_all_s.groupby(["player_key","venue_slug"])["is_win"].transform(
     lambda x: x.shift(1).rolling(10,min_periods=1).mean())
 
-df_all["_is_nige_f"]  = (df_all["finish_type"] == "逃切").astype(float)
-df_all["_is_sashi_f"] = df_all["finish_type"].isin(["差切","追込"]).astype(float)
+df_all["_is_nige_f"]  = np.where(df_all["result_present"], (df_all["finish_type"] == "逃切").astype(float), np.nan)
+df_all["_is_sashi_f"] = np.where(df_all["result_present"], df_all["finish_type"].isin(["差切","追込"]).astype(float), np.nan)
 df_all["is_nige_finish"]  = df_all.groupby("player_key")["_is_nige_f"].transform(
     lambda x: x.shift(1).rolling(10, min_periods=1).mean())
 df_all["is_sashi_finish"] = df_all.groupby("player_key")["_is_sashi_f"].transform(
@@ -246,7 +252,12 @@ COMBO_FEATS = [
 req = ["race_score","class_num","style_num","gear","score_rank","is_honmei",
        "n_players_in_race","prev1_rank","last3_avg_rank","last5_avg_rank",
        "last5_win_rate","rank_trend","days_since_last","rank_num"]
-df_model = df_all.dropna(subset=req).copy()
+# Train only on races whose result fields were captured for every listed rider.
+# Partial race pages must not create misleading winner/2nd/3rd labels.
+complete_races = df_all.groupby("race_id")["result_present"].all()
+complete_mask = df_all["race_id"].map(complete_races).fillna(False)
+df_model = df_all[complete_mask].dropna(subset=req).copy()
+print(f"結果完了レースのみ学習対象: {df_model['race_id'].nunique():,}レース")
 
 # ========== 訓練: 対象日より前 ==========
 df_train = df_model[df_model["date"] < TARGET_DATE].copy()
