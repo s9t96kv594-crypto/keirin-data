@@ -50,7 +50,7 @@
           "trifecta_payout_per_100yen": 1870,
           "status": "settled",
           "hit": false,
-          "source": "https://keirin.kdreams.jp/fukui/racedetail/5120261125030002/?pageType=result"
+          "source": "https://keirin.netkeiba.com/race/result/?race_id=202611275102"
         },
         {
           "venue": "松阪",
@@ -153,7 +153,7 @@
           "trifecta_payout_per_100yen": 1870,
           "status": "settled",
           "hit": false,
-          "source": "https://keirin.kdreams.jp/fukui/racedetail/5120261125030002/?pageType=result"
+          "source": "https://keirin.netkeiba.com/race/result/?race_id=202611275102"
         },
         {
           "venue": "松阪",
@@ -216,6 +216,7 @@
     "Odds are the snapshot values reported by the scheduled prediction run; final odds may differ.",
     "All settled tickets missed. Pending races are excluded from settled ROI.",
     "Result pages may display result data before all operator result-list pages refresh; reconcile again against official K-Dreams results when available.",
-    "2026-11-28 reconciliation: Matsusaka 2R, Matsudo 2R, and Kurume 2R settled from published result pages; all 8 venues' 2R batch is now reconciled."
+    "2026-11-28 reconciliation: Matsusaka 2R, Matsudo 2R, and Kurume 2R settled from published result pages; all 8 venues' 2R batch is now reconciled.",
+    "Fukui 2R result source corrected to the verified Nov 27 netkeirin race result page."
   ]
 }
