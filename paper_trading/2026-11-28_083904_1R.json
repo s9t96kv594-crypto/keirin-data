@@ -1,0 +1,212 @@
+{
+  "prediction_batch_id": "2026-11-28T08:39:04+09:00_1R",
+  "prediction_locked_at": "2026-11-28T08:39:04+09:00",
+  "bet_type": "3連単",
+  "virtual_stake_per_ticket_yen": 100,
+  "mode": "paper_trading_only",
+  "model_status": "暫定ルール版。学習済み確率モデルとは別物。2モデルの独立校正・期待値検証は未完了。",
+  "races": [
+    {
+      "venue": "小松島",
+      "date": "2026-11-28",
+      "race": 1,
+      "event": "FII おはようチャリロト杯 最終日 A級特一般",
+      "start_time": "08:50",
+      "close_time": "08:45",
+      "odds_snapshot_time": "2026-11-28 08:24 JST",
+      "source": "https://keirin.kdreams.jp/komatsushima/racedetail/7320261126030001/",
+      "lineup": "1-4-7 / 2-6 / 5-3",
+      "riders": [
+        {
+          "number": 1,
+          "name": "岩原健馬",
+          "score": 82.38,
+          "style": "逃",
+          "recent": "11/26 7着、11/27 3着",
+          "top3_rate_4m": 42.3
+        },
+        {
+          "number": 2,
+          "name": "米村光星",
+          "score": 80.65,
+          "style": "逃",
+          "recent": "11/26 5着、11/27 4着",
+          "top3_rate_4m": 17.3
+        },
+        {
+          "number": 3,
+          "name": "長野和弘",
+          "score": 80.5,
+          "style": "追",
+          "recent": "11/26 7着、11/27 5着",
+          "top3_rate_4m": 22.7
+        },
+        {
+          "number": 4,
+          "name": "宇根秀俊",
+          "score": 84.03,
+          "style": "追",
+          "recent": "11/26 4着、11/27 4着",
+          "top3_rate_4m": 50
+        },
+        {
+          "number": 5,
+          "name": "櫻木雄太",
+          "score": 83.09,
+          "style": "逃",
+          "recent": "11/26 3着、11/27 7着",
+          "top3_rate_4m": 47.8
+        },
+        {
+          "number": 6,
+          "name": "田川辰二",
+          "score": 79.68,
+          "style": "追",
+          "recent": "11/26 6着、11/27 7着",
+          "top3_rate_4m": 22.2
+        },
+        {
+          "number": 7,
+          "name": "土井勲",
+          "score": 81.74,
+          "style": "追",
+          "recent": "11/27 7着",
+          "top3_rate_4m": 25
+        }
+      ],
+      "conditions": {
+        "weather": "未取得",
+        "wind": "未取得",
+        "track": "未取得"
+      },
+      "models": {
+        "AI1_high_payout": {
+          "label": "高配当ハンター",
+          "tickets": [
+            {
+              "pick": "5-3-7",
+              "odds_snapshot": 114.2,
+              "stake_yen": 100,
+              "reason": "櫻木—長野の連係を軸に、別線の土井が3着へ流れ込む波乱シナリオ。114.2倍の中穴〜高配当を狙う。"
+            }
+          ]
+        },
+        "AI2_long_term_roi": {
+          "label": "回収率マスター",
+          "tickets": [
+            {
+              "pick": "1-4-7",
+              "odds_snapshot": 19.3,
+              "stake_yen": 100,
+              "reason": "岩原—宇根—土井の3車ライン。岩原の直近4か月勝率23.0%、宇根の競走得点84.03・3連対率50.0%を重視。"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "venue": "佐世保",
+      "date": "2026-11-28",
+      "race": 1,
+      "event": "FII 佐世保ベースカップ 2日目 A級/チャレンジ一般",
+      "start_time": "09:00",
+      "close_time": "08:55",
+      "odds_snapshot_time": "2026-11-28 08:33 JST",
+      "source": "https://keirin.kdreams.jp/sasebo/racedetail/8520261127020001/",
+      "lineup": "5-1-7 / 2-4-6 / 3単騎",
+      "riders": [
+        {
+          "number": 1,
+          "name": "三木翔太",
+          "score": 71.33,
+          "style": "両",
+          "recent": "11/27 予選6着",
+          "top3_rate_4m": 42.8
+        },
+        {
+          "number": 2,
+          "name": "阿部龍也",
+          "score": 69.8,
+          "style": "逃",
+          "recent": "11/27 予選6着",
+          "top3_rate_4m": 47.6
+        },
+        {
+          "number": 3,
+          "name": "竜門孝宗",
+          "score": 69.46,
+          "style": "追",
+          "recent": "11/27 予選7着",
+          "top3_rate_4m": 42.3
+        },
+        {
+          "number": 4,
+          "name": "川口秀人",
+          "score": 66.61,
+          "style": "追",
+          "recent": "11/27 予選7着",
+          "top3_rate_4m": 22.2
+        },
+        {
+          "number": 5,
+          "name": "横田政直",
+          "score": 68.95,
+          "style": "逃",
+          "recent": "11/27 予選6着",
+          "top3_rate_4m": 41.6
+        },
+        {
+          "number": 6,
+          "name": "梶應弘樹",
+          "score": 62.44,
+          "style": "追",
+          "recent": "11/27 予選7着",
+          "top3_rate_4m": 0
+        },
+        {
+          "number": 7,
+          "name": "野崎修一",
+          "score": 65.79,
+          "style": "追",
+          "recent": "11/27 予選7着",
+          "top3_rate_4m": 20
+        }
+      ],
+      "conditions": {
+        "weather": "未取得",
+        "wind": "未取得",
+        "track": "未取得"
+      },
+      "models": {
+        "AI1_high_payout": {
+          "label": "高配当ハンター",
+          "tickets": [
+            {
+              "pick": "5-3-1",
+              "odds_snapshot": 59.9,
+              "stake_yen": 100,
+              "reason": "横田の先行力を軸に、単騎の竜門が2着へ割り込み、三木が3着に残る波乱シナリオ。"
+            }
+          ]
+        },
+        "AI2_long_term_roi": {
+          "label": "回収率マスター",
+          "tickets": [
+            {
+              "pick": "1-5-7",
+              "odds_snapshot": 8.8,
+              "stake_yen": 100,
+              "reason": "三木の競走得点71.33と横田の先行力・直近4か月勝率25.0%を評価。5-1-7ラインの番手差しを想定。"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "天候・風速・走路状態は取得できず未確認。",
+    "オッズは各ページに表示されたスナップショット時刻の値で、締切時の確定オッズではない。",
+    "AI①・AI②は暫定ルール版。学習済み確率モデルや期待値校正済みモデルではない。",
+    "本バッチ以外の当日開催レースは未処理。締切後に遡って予想を作らない。"
+  ]
+}
