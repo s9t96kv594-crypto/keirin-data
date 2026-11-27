@@ -10,7 +10,7 @@
   "odds_snapshot_time_jst": "14:48",
   "bet_type": "3連単",
   "virtual_stake_per_ticket_yen": 100,
-  "status": "pending",
+  "status": "settled",
   "models": {
     "AI1_high_payout": {
       "label": "高配当ハンター",
@@ -32,7 +32,15 @@
           "odds": 82.4
         }
       ],
-      "stake_yen": 400
+      "stake_yen": 400,
+      "result": {
+        "trifecta": "1-2-4",
+        "payout_per_100yen": 690
+      },
+      "hit_tickets": 0,
+      "return_yen": 0,
+      "profit_yen": -400,
+      "roi_percent": 0
     },
     "AI2_long_term_roi": {
       "label": "回収率マスター",
@@ -54,7 +62,15 @@
           "odds": 47.9
         }
       ],
-      "stake_yen": 400
+      "stake_yen": 400,
+      "result": {
+        "trifecta": "1-2-4",
+        "payout_per_100yen": 690
+      },
+      "hit_tickets": 0,
+      "return_yen": 0,
+      "profit_yen": -400,
+      "roi_percent": 0
     }
   },
   "basis": {
@@ -62,6 +78,10 @@
     "conditions": "曇り20.0℃、南南西4.0m/s B横風（出走表掲載値）",
     "notes": "試作ルールによる暫定予想。GitHub CSVを実際に学習・読込して生成した予想ではない。"
   },
-  "result": null,
-  "result_source": null
+  "result": {
+    "trifecta": "1-2-4",
+    "payout_per_100yen": 690
+  },
+  "result_source": "https://keirin.netkeiba.com/race/result/?race_id=202611274610",
+  "settlement_checked_at": "2026-11-28T08:37:53+09:00"
 }
