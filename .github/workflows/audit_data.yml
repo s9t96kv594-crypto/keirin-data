@@ -2,6 +2,12 @@ name: 競輪CSVデータ監査
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'keirin_data/**'
+      - 'scripts/**'
+      - '.github/workflows/audit_data.yml'
 
 permissions:
   contents: read
