@@ -25,7 +25,7 @@ def repair_player_prefecture(player_name, pref):
     if pref_text in PREFECTURES:
         return name, pref_text, False
 
-    m = re.match(r"^(.*?)\\s+([^\\s])$", name.strip())
+    m = re.match(r"^(.*?)\s+([^\s])$", name.strip())
     if m:
         candidate = m.group(2) + pref_text
         if candidate in PREFECTURES:
