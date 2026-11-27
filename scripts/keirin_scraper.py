@@ -238,6 +238,22 @@ def get_races_for_month(year, month):
 
 # ========== Step2: レース詳細ページをパース ==========
 
+def parse_player_identity(raw_name):
+    """Parse player name, prefecture, age and term from K-Dreams text.
+
+    pandas.read_html can separate characters inside a prefecture, e.g.
+    '兵 庫/50/80'. This parser requires 2-4 prefecture characters and
+    removes whitespace inside that field.
+    """
+    raw = str(raw_name).strip()
+    m = re.match(r"^(.*?)\s+((?:[^\s/]\s*){2,4})/(\d+)/(\d+)\s*$", raw)
+    if m:
+        return (m.group(1).strip(), re.sub(r"\s+", "", m.group(2)), m.group(3), m.group(4))
+    m = re.match(r"(.+?)\s+(\S+)/(\d+)/(\d+)", raw)
+    if m:
+        return m.group(1).strip(), m.group(2), m.group(3), m.group(4)
+    return raw, "", "", ""
+
 def parse_race(venue_slug, race_id):
     """
     1ページに出走表・結果・払戻が全て含まれる。
@@ -417,17 +433,9 @@ def parse_race(venue_slug, race_id):
         except Exception:
             continue
 
-        # 選手名・府県・年齢・期別を分割（例: "外崎 一成  北海道/37/94"）
+        # 選手名・府県・年齢・期別を分割
         raw_name = str(player[col_name]) if col_name else ""
-        name, pref, age, term = "", "", "", ""
-        m = re.match(r"(.+?)\s+(\S+)/(\d+)/(\d+)", raw_name)
-        if m:
-            name = m.group(1).strip()
-            pref = m.group(2)
-            age  = m.group(3)
-            term = m.group(4)
-        else:
-            name = raw_name
+        name, pref, age, term = parse_player_identity(raw_name)
 
         row = {
             "race_id":      race_id,
