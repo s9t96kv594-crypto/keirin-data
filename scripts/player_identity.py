@@ -1,3 +1,5 @@
+import re
+
 def parse_player_identity(raw_name):
     """Parse player name, prefecture, age and term from K-Dreams text.
 
