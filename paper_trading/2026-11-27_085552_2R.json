@@ -1,0 +1,214 @@
+{
+  "prediction_batch_id": "2026-11-27T08:55:52+09:00_2R",
+  "prediction_locked_at": "2026-11-27T08:55:52+09:00",
+  "settlement_checked_at": "2026-11-27T15:14:06+09:00",
+  "bet_type": "3連単",
+  "virtual_stake_per_ticket_yen": 100,
+  "models": {
+    "AI1_high_payout": {
+      "label": "高配当ハンター",
+      "tickets": [
+        {
+          "venue": "小松島",
+          "race": 2,
+          "pick": "5-7-3",
+          "odds_snapshot": 85,
+          "result": "5-7-1",
+          "trifecta_payout_per_100yen": 2770,
+          "status": "settled",
+          "hit": false,
+          "source": "https://keirin.netkeiba.com/race/result/?race_id=202611277302"
+        },
+        {
+          "venue": "佐世保",
+          "race": 2,
+          "pick": "7-5-3",
+          "odds_snapshot": 126.9,
+          "result": "7-5-1",
+          "trifecta_payout_per_100yen": 770,
+          "status": "settled",
+          "hit": false,
+          "source": "https://keirin.netkeiba.com/race/result/?race_id=202611278502"
+        },
+        {
+          "venue": "平塚",
+          "race": 2,
+          "pick": "1-7-2",
+          "odds_snapshot": 79.7,
+          "result": "7-3-1",
+          "trifecta_payout_per_100yen": 3310,
+          "status": "settled",
+          "hit": false,
+          "source": "https://keirin.netkeiba.com/race/result/?race_id=202611273502"
+        },
+        {
+          "venue": "福井",
+          "race": 2,
+          "pick": "5-2-7",
+          "odds_snapshot": 43.3,
+          "result": "7-3-1",
+          "trifecta_payout_per_100yen": 1870,
+          "status": "settled",
+          "hit": false,
+          "source": "https://keirin.kdreams.jp/fukui/racedetail/5120261125030002/?pageType=result"
+        },
+        {
+          "venue": "松阪",
+          "race": 2,
+          "pick": "3-5-1",
+          "odds_snapshot": 57,
+          "result": null,
+          "trifecta_payout_per_100yen": null,
+          "status": "pending",
+          "hit": null,
+          "scheduled_start": "16:27"
+        },
+        {
+          "venue": "富山",
+          "race": 2,
+          "pick": "1-7-2",
+          "odds_snapshot": 159.7,
+          "result": "3-6-2",
+          "trifecta_payout_per_100yen": 49200,
+          "status": "settled",
+          "hit": false,
+          "source": "https://keirin.netkeiba.com/race/result//?race_id=202611274602"
+        },
+        {
+          "venue": "松戸",
+          "race": 2,
+          "pick": "1-2-4",
+          "odds_snapshot": 44.2,
+          "result": null,
+          "trifecta_payout_per_100yen": null,
+          "status": "pending",
+          "hit": null,
+          "scheduled_start": "21:10"
+        },
+        {
+          "venue": "久留米",
+          "race": 2,
+          "pick": "1-4-2",
+          "odds_snapshot": 87.7,
+          "result": null,
+          "trifecta_payout_per_100yen": null,
+          "status": "pending",
+          "hit": null,
+          "scheduled_start": "21:00"
+        }
+      ],
+      "settled_count": 5,
+      "pending_count": 3,
+      "settled_stake_yen": 500,
+      "settled_return_yen": 0,
+      "settled_profit_yen": -500,
+      "settled_hit_count": 0,
+      "settled_roi_percent": 0
+    },
+    "AI2_long_term_roi": {
+      "label": "回収率マスター",
+      "tickets": [
+        {
+          "venue": "小松島",
+          "race": 2,
+          "pick": "5-7-2",
+          "odds_snapshot": 8.4,
+          "result": "5-7-1",
+          "trifecta_payout_per_100yen": 2770,
+          "status": "settled",
+          "hit": false,
+          "source": "https://keirin.netkeiba.com/race/result/?race_id=202611277302"
+        },
+        {
+          "venue": "佐世保",
+          "race": 2,
+          "pick": "5-7-1",
+          "odds_snapshot": 3.3,
+          "result": "7-5-1",
+          "trifecta_payout_per_100yen": 770,
+          "status": "settled",
+          "hit": false,
+          "source": "https://keirin.netkeiba.com/race/result/?race_id=202611278502"
+        },
+        {
+          "venue": "平塚",
+          "race": 2,
+          "pick": "7-2-6",
+          "odds_snapshot": 79.7,
+          "result": "7-3-1",
+          "trifecta_payout_per_100yen": 3310,
+          "status": "settled",
+          "hit": false,
+          "source": "https://keirin.netkeiba.com/race/result/?race_id=202611273502"
+        },
+        {
+          "venue": "福井",
+          "race": 2,
+          "pick": "7-3-4",
+          "odds_snapshot": 13.5,
+          "result": "7-3-1",
+          "trifecta_payout_per_100yen": 1870,
+          "status": "settled",
+          "hit": false,
+          "source": "https://keirin.kdreams.jp/fukui/racedetail/5120261125030002/?pageType=result"
+        },
+        {
+          "venue": "松阪",
+          "race": 2,
+          "pick": "5-3-7",
+          "odds_snapshot": 28.5,
+          "result": null,
+          "trifecta_payout_per_100yen": null,
+          "status": "pending",
+          "hit": null,
+          "scheduled_start": "16:27"
+        },
+        {
+          "venue": "富山",
+          "race": 2,
+          "pick": "2-7-6",
+          "odds_snapshot": 79.8,
+          "result": "3-6-2",
+          "trifecta_payout_per_100yen": 49200,
+          "status": "settled",
+          "hit": false,
+          "source": "https://keirin.netkeiba.com/race/result//?race_id=202611274602"
+        },
+        {
+          "venue": "松戸",
+          "race": 2,
+          "pick": "1-2-3",
+          "odds_snapshot": 2.7,
+          "result": null,
+          "trifecta_payout_per_100yen": null,
+          "status": "pending",
+          "hit": null,
+          "scheduled_start": "21:10"
+        },
+        {
+          "venue": "久留米",
+          "race": 2,
+          "pick": "1-3-2",
+          "odds_snapshot": 43.8,
+          "result": null,
+          "trifecta_payout_per_100yen": null,
+          "status": "pending",
+          "hit": null,
+          "scheduled_start": "21:00"
+        }
+      ],
+      "settled_count": 5,
+      "pending_count": 3,
+      "settled_stake_yen": 500,
+      "settled_return_yen": 0,
+      "settled_profit_yen": -500,
+      "settled_hit_count": 0,
+      "settled_roi_percent": 0
+    }
+  },
+  "notes": [
+    "Odds are the snapshot values reported by the scheduled prediction run; final odds may differ.",
+    "All settled tickets missed. Pending races are excluded from settled ROI.",
+    "Result pages may display result data before all operator result-list pages refresh; reconcile again against official K-Dreams results when available."
+  ]
+}
