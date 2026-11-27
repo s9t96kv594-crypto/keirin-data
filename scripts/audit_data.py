@@ -13,7 +13,7 @@ from pathlib import Path
 
 DATA_DIR = Path("keirin_data")
 OUT = DATA_DIR / "audit_report.json"
-REQUIRED = ("race_id", "date", "race_no", "banum", "player_name")
+REQUIRED = ("race_id", "date", "race_no", "banum", "player_name", "pref")
 RESULT_FIELDS = ("rank", "san_ren_tan")
 
 
@@ -30,6 +30,8 @@ def audit_file(path: Path) -> dict:
         "unique_races": 0,
         "rank_populated_rows": 0,
         "trifecta_populated_rows": 0,
+        "suspicious_pref_rows": 0,
+        "suspicious_pref_examples": [],
         "parse_errors": 0,
     }
     race_ids = set()
@@ -77,6 +79,18 @@ def audit_file(path: Path) -> dict:
                 else:
                     seen_pairs.add(pair)
 
+            if "pref" in idx:
+                pref = row[idx["pref"]].strip()
+                if pref and not (2 <= len(pref) <= 4):
+                    report["suspicious_pref_rows"] += 1
+                    if len(report["suspicious_pref_examples"]) < 8:
+                        report["suspicious_pref_examples"].append({
+                            "line": line_no,
+                            "banum": banum,
+                            "player_name": row[idx["player_name"]].strip() if "player_name" in idx else "",
+                            "pref": pref,
+                        })
+
             if "rank" in idx and row[idx["rank"]].strip():
                 report["rank_populated_rows"] += 1
             if "san_ren_tan" in idx and row[idx["san_ren_tan"]].strip():
@@ -111,6 +125,9 @@ def main() -> None:
         "total_rows": sum(r.get("rows", 0) for r in results),
         "total_malformed_width_rows": sum(
             r.get("malformed_width_rows", 0) for r in results
+        ),
+        "total_suspicious_pref_rows": sum(
+            r.get("suspicious_pref_rows", 0) for r in results
         ),
         "total_unique_races_per_file_sum": sum(
             r.get("unique_races", 0) for r in results
