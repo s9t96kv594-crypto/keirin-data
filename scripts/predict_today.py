@@ -18,6 +18,7 @@ import numpy as np
 import pandas as pd
 import lightgbm as lgb
 from pathlib import Path
+from data_cleaning import repair_prefecture_columns
 
 warnings.filterwarnings("ignore")
 
@@ -89,7 +90,9 @@ SCORE_GAP_THRESH = 2
 DATA_DIR = Path("keirin_data")
 files = [f for f in sorted(glob.glob(str(DATA_DIR / "202[3456]_*.csv"))) if "sample" not in f and "bak" not in f]
 df_all = pd.concat([pd.read_csv(f, encoding="utf-8-sig") for f in files], ignore_index=True)
+df_all, repaired_pref_rows = repair_prefecture_columns(df_all)
 print(f"総行数: {len(df_all):,}")
+print(f"府県データ修正: {repaired_pref_rows:,}行 (曖昧な値は変更なし)")
 
 def parse_payout(s):
     if pd.isna(s) or str(s).strip() == "": return None, None
