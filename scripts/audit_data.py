@@ -10,6 +10,7 @@ import csv
 import json
 from collections import Counter
 from pathlib import Path
+from data_cleaning import repair_player_prefecture
 
 DATA_DIR = Path("keirin_data")
 OUT = DATA_DIR / "audit_report.json"
@@ -30,8 +31,10 @@ def audit_file(path: Path) -> dict:
         "unique_races": 0,
         "rank_populated_rows": 0,
         "trifecta_populated_rows": 0,
+        "repairable_pref_rows": 0,
         "suspicious_pref_rows": 0,
         "suspicious_pref_examples": [],
+        "rank_populated_ratio": 0.0,
         "parse_errors": 0,
     }
     race_ids = set()
@@ -81,15 +84,20 @@ def audit_file(path: Path) -> dict:
 
             if "pref" in idx:
                 pref = row[idx["pref"]].strip()
+                player_name = row[idx["player_name"]].strip() if "player_name" in idx else ""
                 if pref and not (2 <= len(pref) <= 4):
-                    report["suspicious_pref_rows"] += 1
-                    if len(report["suspicious_pref_examples"]) < 8:
-                        report["suspicious_pref_examples"].append({
-                            "line": line_no,
-                            "banum": banum,
-                            "player_name": row[idx["player_name"]].strip() if "player_name" in idx else "",
-                            "pref": pref,
-                        })
+                    _, _, repairable = repair_player_prefecture(player_name, pref)
+                    if repairable:
+                        report["repairable_pref_rows"] += 1
+                    else:
+                        report["suspicious_pref_rows"] += 1
+                        if len(report["suspicious_pref_examples"]) < 8:
+                            report["suspicious_pref_examples"].append({
+                                "line": line_no,
+                                "banum": banum,
+                                "player_name": player_name,
+                                "pref": pref,
+                            })
 
             if "rank" in idx and row[idx["rank"]].strip():
                 report["rank_populated_rows"] += 1
@@ -97,6 +105,7 @@ def audit_file(path: Path) -> dict:
                 report["trifecta_populated_rows"] += 1
 
     report["unique_races"] = len(race_ids)
+    report["rank_populated_ratio"] = (report["rank_populated_rows"] / report["rows"]) if report["rows"] else 0.0
     report["missing_required"] = dict(report["missing_required"])
     report["result_fields_present"] = {
         field: field in idx for field in RESULT_FIELDS
@@ -125,6 +134,9 @@ def main() -> None:
         "total_rows": sum(r.get("rows", 0) for r in results),
         "total_malformed_width_rows": sum(
             r.get("malformed_width_rows", 0) for r in results
+        ),
+        "total_repairable_pref_rows": sum(
+            r.get("repairable_pref_rows", 0) for r in results
         ),
         "total_suspicious_pref_rows": sum(
             r.get("suspicious_pref_rows", 0) for r in results
