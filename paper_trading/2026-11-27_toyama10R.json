@@ -1,0 +1,67 @@
+{
+  "prediction_id": "2026-11-27_toyama10R",
+  "venue": "富山",
+  "date": "2026-11-27",
+  "race": 10,
+  "event": "FII チャリロト杯 A級準決勝",
+  "start_time": "15:26",
+  "close_time": "15:21",
+  "prediction_locked_time_jst": "15:00頃（概算。正確な固定時刻は未記録）",
+  "odds_snapshot_time_jst": "14:48",
+  "bet_type": "3連単",
+  "virtual_stake_per_ticket_yen": 100,
+  "status": "pending",
+  "models": {
+    "AI1_high_payout": {
+      "label": "高配当ハンター",
+      "tickets": [
+        {
+          "pick": "5-1-6",
+          "odds": 70
+        },
+        {
+          "pick": "5-1-4",
+          "odds": 77.8
+        },
+        {
+          "pick": "2-4-7",
+          "odds": 58.6
+        },
+        {
+          "pick": "4-2-7",
+          "odds": 82.4
+        }
+      ],
+      "stake_yen": 400
+    },
+    "AI2_long_term_roi": {
+      "label": "回収率マスター",
+      "tickets": [
+        {
+          "pick": "1-5-4",
+          "odds": 15
+        },
+        {
+          "pick": "1-5-2",
+          "odds": 13.1
+        },
+        {
+          "pick": "2-4-1",
+          "odds": 29.1
+        },
+        {
+          "pick": "5-1-2",
+          "odds": 47.9
+        }
+      ],
+      "stake_yen": 400
+    }
+  },
+  "basis": {
+    "lineup": "5-1-6 / 2-4-7 / 3単騎",
+    "conditions": "曇り20.0℃、南南西4.0m/s B横風（出走表掲載値）",
+    "notes": "試作ルールによる暫定予想。GitHub CSVを実際に学習・読込して生成した予想ではない。"
+  },
+  "result": null,
+  "result_source": null
+}
