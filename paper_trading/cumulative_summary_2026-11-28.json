@@ -1,0 +1,55 @@
+{
+  "as_of": "2026-11-28T08:39:04+09:00",
+  "scope": "2026-11-27 08:55 batch (8 venues x 2R) + Toyama 10R + 2026-11-28 early 1R batch",
+  "mode": "paper_trading_only",
+  "model_version": "暫定ルール版。学習済み確率モデル・確率校正・期待値校正は未完了。",
+  "AI1_high_payout": {
+    "label": "高配当ハンター",
+    "locked_tickets": 14,
+    "settled_tickets": 12,
+    "pending_tickets": 2,
+    "settled_stake_yen": 1200,
+    "pending_stake_yen": 200,
+    "total_locked_stake_yen": 1400,
+    "settled_return_yen": 0,
+    "settled_profit_yen": -1200,
+    "settled_roi_percent": 0,
+    "settled_hit_count": 0,
+    "settled_hit_rate_percent": 0,
+    "highest_hit_payout_yen": null,
+    "max_consecutive_losses": 12,
+    "current_consecutive_losses": 12
+  },
+  "AI2_long_term_roi": {
+    "label": "回収率マスター",
+    "locked_tickets": 14,
+    "settled_tickets": 12,
+    "pending_tickets": 2,
+    "settled_stake_yen": 1200,
+    "pending_stake_yen": 200,
+    "total_locked_stake_yen": 1400,
+    "settled_return_yen": 280,
+    "settled_profit_yen": -920,
+    "settled_roi_percent": 23.3,
+    "settled_hit_count": 1,
+    "settled_hit_rate_percent": 8.3,
+    "highest_hit_payout_yen": 280,
+    "max_consecutive_losses": 11,
+    "current_consecutive_losses": 0
+  },
+  "data_quality": {
+    "historical_monthly_csv_files_audited": 59,
+    "rider_rows_audited": 936309,
+    "repairable_prefecture_rows": 850487,
+    "ambiguous_prefecture_rows_left_unchanged": 105,
+    "historical_result_rank_coverage_2022_2025_percent": 99.82,
+    "historical_result_rank_coverage_2026_percent": 57.64,
+    "historical_pre_race_odds_snapshots": "未保有。CSVの払戻金は事前オッズではないため、過去ROI/EVバックテスト不可。",
+    "weather_wind_track_data": "本日対象の早朝2レースは未取得。"
+  },
+  "limitations": [
+    "2026-11-28の全国開催は8場78レースを一覧で確認したが、現時点で新規固定できたのは小松島1R・佐世保1Rのみ。",
+    "締切済みのレースには遡及して予想を作らない。その他の当日レースは未処理。",
+    "暫定モデルの少数サンプル成績であり、実戦判断には使わない。"
+  ]
+}
