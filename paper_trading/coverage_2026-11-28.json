@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-28",
+  "as_of": "2026-11-28T08:40:03+09:00",
+  "source": "https://keirin.kdreams.jp/",
+  "venue_race_counts": [
+    {
+      "venue": "松阪",
+      "races": 12,
+      "first_race_status": "未固定",
+      "reason": "3連単発売票数100。07:57時点の表示で多数の組合せが9999.9。オッズ信頼性不足。"
+    },
+    {
+      "venue": "平塚",
+      "races": 12,
+      "first_race_status": "未固定",
+      "reason": "3連単発売票数550。08:36時点で多数の組合せが9999.9。オッズ信頼性不足。"
+    },
+    {
+      "venue": "小松島",
+      "races": 7,
+      "first_race_status": "予想固定済み",
+      "race": 1
+    },
+    {
+      "venue": "富山",
+      "races": 11,
+      "first_race_status": "未固定",
+      "reason": "3連単発売票数208。07:57時点で多数の組合せが9999.9。オッズ信頼性不足。"
+    },
+    {
+      "venue": "松戸",
+      "races": 9,
+      "first_race_status": "未固定",
+      "reason": "3連単発売票数104。08:00時点で市場が薄く、オッズ安定性不足。"
+    },
+    {
+      "venue": "久留米",
+      "races": 9,
+      "first_race_status": "未固定",
+      "reason": "3連単発売票数49。市場が薄く、オッズ信頼性不足。"
+    },
+    {
+      "venue": "佐世保",
+      "races": 7,
+      "first_race_status": "予想固定済み",
+      "race": 1
+    },
+    {
+      "venue": "小倉",
+      "races": 11,
+      "first_race_status": "未固定",
+      "reason": "3連単発売票数49。08:36時点で多数の組合せが9999.9。オッズ信頼性不足。"
+    }
+  ],
+  "total_races": 78,
+  "locked_races": 2,
+  "not_locked_races": 76,
+  "status": "8開催・78Rを一覧確認。小松島1Rと佐世保1Rのみ締切前に予想固定。各場の残りレースは未処理。締切後の予想は作成しない。",
+  "missing_fields": [
+    "当日天候",
+    "風速",
+    "走路状態"
+  ],
+  "note": "発売票数が少ないレースは、取得できたオッズでも不安定な可能性が高いため、期待値判断に使わず見送り。"
+}
