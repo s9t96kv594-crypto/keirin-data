@@ -18,7 +18,11 @@
     "settled_hit_rate_percent": 0,
     "highest_hit_payout_yen": null,
     "max_consecutive_losses": 12,
-    "current_consecutive_losses": 12
+    "current_consecutive_losses": 12,
+    "settled_races": 9,
+    "hit_races": 0,
+    "settled_race_hit_rate_percent": 0,
+    "settled_ticket_hit_rate_percent": 0
   },
   "AI2_long_term_roi": {
     "label": "回収率マスター",
@@ -35,7 +39,11 @@
     "settled_hit_rate_percent": 8.3,
     "highest_hit_payout_yen": 280,
     "max_consecutive_losses": 11,
-    "current_consecutive_losses": 0
+    "current_consecutive_losses": 0,
+    "settled_races": 9,
+    "hit_races": 1,
+    "settled_race_hit_rate_percent": 11.1,
+    "settled_ticket_hit_rate_percent": 8.3
   },
   "data_quality": {
     "historical_monthly_csv_files_audited": 59,
